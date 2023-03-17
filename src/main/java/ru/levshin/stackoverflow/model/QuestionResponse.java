@@ -4,8 +4,11 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * Used to simplify mapping StackOverFlow API response
+ */
 @Data
-public class QuestionResponce {
+public class QuestionResponse {
 
     private List<Item> items;
 }

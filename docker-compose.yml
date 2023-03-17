@@ -1,0 +1,8 @@
+version: '1'
+
+services:
+  man:
+    build: .
+    image: so/app:v1
+    ports:
+    - 8088:8088

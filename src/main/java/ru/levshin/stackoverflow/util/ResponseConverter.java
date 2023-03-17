@@ -1,23 +1,26 @@
 package ru.levshin.stackoverflow.util;
 
-import lombok.experimental.UtilityClass;
+import org.springframework.stereotype.Component;
 import ru.levshin.stackoverflow.model.Item;
-import ru.levshin.stackoverflow.model.QuestionResponce;
+import ru.levshin.stackoverflow.model.QuestionResponse;
 import ru.levshin.stackoverflow.model.Question;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@UtilityClass
-public class Converter {
+/**
+ * Provides method converting  {@link QuestionResponse} to {@link List} of {@link Question}
+ */
+@Component
+public class ResponseConverter {
 
-    public static List<Question> convertToQuestion(QuestionResponce questionResponce) {
-        return questionResponce.getItems()
-                .stream().map(Converter::convertItemToQuestiuon)
+    public List<Question> convertToQuestion(QuestionResponse questionResponse) {
+        return questionResponse.getItems()
+                .stream().map(this::convertItemToQuestion)
                 .collect(Collectors.toList());
     }
 
-    private static Question convertItemToQuestiuon(Item item) {
+    private Question convertItemToQuestion(Item item) {
         return Question.builder()
                 .date(item.getDate())
                 .isAnswered(item.isAnswered())

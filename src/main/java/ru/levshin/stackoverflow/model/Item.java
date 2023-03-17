@@ -3,15 +3,17 @@ package ru.levshin.stackoverflow.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-import java.util.Date;
-
+/**
+ * Represents the json element from StackOverFlow API response
+ */
 @Data
 public class Item {
 
+    @JsonProperty("owner")
     private Owner owner;
 
     @JsonProperty("last_activity_date")
-    private Date date;
+    private Long date;
 
     @JsonProperty("is_answered")
     private boolean isAnswered;

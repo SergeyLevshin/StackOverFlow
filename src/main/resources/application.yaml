@@ -6,5 +6,13 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
 
-baseurl:
-  https://api.stackexchange.com/2.3/search?site=stackoverflow&order=desc&sort=activity&intitle=
+springfox:
+  documentation:
+    swagger:
+      v2:
+        host: api-docs
+        use-model-v3: true
+
+stackoverflowurl:
+  https://api.stackexchange.com/2.3/search
+
