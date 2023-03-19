@@ -2,6 +2,7 @@ package ru.levshin.stackoverflow.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +26,7 @@ public class StackOverFlowController {
      * @return {@link List} of questions
      */
     @GetMapping
-    public ResponseEntity<List<Question>> getAnswers(@RequestParam String param) {
+    public ResponseEntity<List<Question>> getAnswers(@NonNull @RequestParam String param) {
         return ResponseEntity.ok(stackOverFlowSearchService.getItems(param));
     }
 
@@ -36,7 +37,7 @@ public class StackOverFlowController {
      * @return {@link GroupedSoResponse} with questions
      */
     @GetMapping("/group")
-    public ResponseEntity<GroupedSoResponse> getAnswersGrouped(@RequestParam String param) {
+    public ResponseEntity<GroupedSoResponse> getAnswersGrouped(@NonNull @RequestParam String param) {
         return ResponseEntity.ok(stackOverFlowSearchService.getGroupedResponse(param));
     }
 }
