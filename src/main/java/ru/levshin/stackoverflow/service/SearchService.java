@@ -2,6 +2,10 @@ package ru.levshin.stackoverflow.service;
 
 import java.util.List;
 
+/**
+ * Service to find some resources
+ * @param <T> resource type
+ */
 public interface SearchService<T> {
 
     /**

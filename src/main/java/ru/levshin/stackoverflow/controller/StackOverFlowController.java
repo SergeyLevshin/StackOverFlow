@@ -13,6 +13,9 @@ import ru.levshin.stackoverflow.service.StackOverFlowSearchService;
 
 import java.util.List;
 
+/**
+ * RestController to search for questions on StackOverFlow
+ */
 @RestController
 @RequestMapping("/search")
 @RequiredArgsConstructor

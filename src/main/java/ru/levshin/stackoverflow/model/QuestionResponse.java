@@ -10,5 +10,8 @@ import java.util.List;
 @Data
 public class QuestionResponse {
 
+    /**
+     * Items {@link Item} list
+     */
     private List<Item> items;
 }

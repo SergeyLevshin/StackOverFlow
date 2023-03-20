@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
 
+/**
+ * Exception handler for common exceptions that may be thrown in the API
+ */
 @Slf4j
 @ControllerAdvice
 public class CommonExceptionHandler {

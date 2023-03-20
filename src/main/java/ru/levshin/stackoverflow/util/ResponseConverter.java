@@ -9,11 +9,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Provides method converting  {@link QuestionResponse} to {@link List} of {@link Question}
+ * Provides method for converting between model classes
  */
 @Component
 public class ResponseConverter {
 
+    /**
+     * Converts {@link QuestionResponse} to {@link List} of {@link Question}
+     * @param questionResponse incoming responce
+     * @return {@link List} of {@link Question}
+     */
     public List<Question> convertToQuestion(QuestionResponse questionResponse) {
         return questionResponse.getItems()
                 .stream().map(this::convertItemToQuestion)
